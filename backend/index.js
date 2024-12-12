@@ -9,6 +9,7 @@ import fs from "node:fs";
 import connectDB from "./src/utils/db.js";
 import errorHandler from "./src/helpers/errorhandler.js";
 import userRouter from "./src/routes/userRoutes.js";
+import taskRouter from "./src/routes/taskRoutes.js";
 
 
 
@@ -31,6 +32,7 @@ app.use(cookieParser());
 
 //Routes
 app.use("/api/v1", userRouter);
+app.use("/api/v1", taskRouter);
 
 
 const PORT = process.env.PORT || 5000;
